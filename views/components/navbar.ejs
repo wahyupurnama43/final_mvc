@@ -1,0 +1,16 @@
+<nav class="sidebar vertical-scroll  ps-container ps-theme-default ps-active-y">
+     <div class="logo d-flex align-content-center align-items-center gap-3">
+          <img src="/img/logo.png" alt="">
+          <h1 class="logo-text">Cookies</h1>
+          <div class="sidebar_close_icon d-lg-none">
+               <i class="ti-close"></i>
+          </div>
+     </div>
+     <ul id="sidebar_menu">
+          <li><a class="<%= title === 'home' && 'active' %>" href="/">Dashboard</a></li>
+          <li><a class="<%= title === 'product' && 'active' %>" href="/product/list">Produk Cookies</a></li>
+          <li><a class="<%= title === 'category' && 'active' %>" href="/category/list">Kategori Cookies</a></li>
+          <li><a class="<%= title === 'transaksi' && 'active' %>" href="/transaksi">Transaksi</a></li>
+          <li><a href="/logout">Logout</a></li>
+     </ul>
+</nav>

@@ -1,0 +1,88 @@
+<!-- Load Header -->
+<%- include('../master/header') %>
+
+     <!-- Ini Main Content -->
+     <div class="main_content_iner overly_inner ">
+
+          <div class="row">
+               <div class="col-lg-12  mb_30">
+                    <div class="white_card card_height_100 mb_30">
+                         <div class="white_card_header">
+                              <div class="box_header m-0">
+                                   <div class="main-title">
+
+                                   </div>
+                              </div>
+                         </div>
+                         <div class="white_card_body">
+                              <form method="post" action="/product/<%- product.id %>/update"
+                                   enctype="multipart/form-data">
+                                   <div class="row mb-3">
+                                        <div class="col-md-6">
+                                             <label class="form-label" for="name">Name Product</label>
+                                             <input type="text" class="form-control" id="name" name="nameProduct"
+                                                  value="<%= product.name %>">
+                                        </div>
+                                        <div class="col-md-6">
+                                             <label class="form-label" for="inputState">Category</label>
+                                             <select id="inputState" class="form-control" name="category">
+                                                  <option selected disabled>Choose...</option>
+                                                  <% category.forEach(e=> { %>
+                                                       <option value="<%= e.id %>" <%=product.categoryId==e.id
+                                                            ? 'selected' : '' %> ><%= e.category %>
+                                                       </option>
+                                                       <% }) %>
+                                             </select>
+                                        </div>
+                                   </div>
+
+                                   <div class="row mb-3">
+                                        <div class=" col-md-6">
+                                             <label class="form-label" for="Qty">Qty</label>
+                                             <input type="number" class="form-control" id="Qty" name="qty"
+                                                  value="<%= product.qty %>">
+                                        </div>
+                                        <div class="col-md-6">
+                                             <label class="form-label" for="Price">Price</label>
+                                             <input type="number" class="form-control" id="Price" name="price"
+                                                  value="<%= product.qty %>">
+                                        </div>
+                                   </div>
+                                   <div class="row mb-3">
+                                        <div class=" col-md-6">
+                                             <label class="form-label" for="Status">Status</label>
+                                             <select id="Status" class="form-control" name="status">
+                                                  <option selected disabled>Choose...</option>
+                                                  <option value="1" <%=product.Available=='1' ? 'selected' : '' %>
+                                                       >Available
+                                                  </option>
+                                                  <option value="0" <%=product.Available=='0' ? 'selected' : '' %>>Not
+                                                       Available</option>
+                                             </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                             <img id="uploadPreview"
+                                                  src="https://climate.onep.go.th/wp-content/uploads/2020/01/default-image.jpg"
+                                                  class="my-3" style="width: 100px; height: 100px;" />
+                                             <br>
+                                             <label class="form-label" for="img">Image</label>
+                                             <input type="file" class="form-control" id="img" name="img">
+                                        </div>
+                                   </div>
+                                   <div class="mb-3">
+                                        <label class="form-label" for="inputAddress">Description</label>
+                                        <textarea name="desc" id="" cols="30" rows="10"
+                                             class="form-control"><%= product.desc %></textarea>
+                                   </div>
+                                   <button type="submit" class="btn btn-primary">Save</button>
+                              </form>
+                         </div>
+                    </div>
+               </div>
+          </div>
+
+          <br>
+          <br>
+          <script type="text/javascript" src="/js/preview.js"></script>
+          <!-- Load footer -->
+          <%- include('../master/footer') %>
