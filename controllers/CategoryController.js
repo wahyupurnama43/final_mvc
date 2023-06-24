@@ -8,7 +8,9 @@ class CategoryController {
     }
 
     static async create(req, res) {
-        res.render("category/add");
+        res.render("category/add", {
+            title: "category",
+        });
     }
 
     static async store(req, res) {

@@ -5,8 +5,6 @@ const passport = require("../lib/passport");
 
 class AuthController {
     static async login(req, res) {
-        //    const result = await prisma.users.findMany();
-        //    console.log(result);
         if (req.isAuthenticated()) return res.redirect("/");
         res.render("auth/login", {
             title: "login",

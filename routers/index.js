@@ -12,6 +12,7 @@ router.post("/register/post", AuthController.storeRegister);
 router.post("/prosesLogin", AuthController.prosesLogin);
 
 router.use(auth);
+
 router.get("/", HomeController.index);
 router.use(productRouter);
 router.use(categoryRouter);

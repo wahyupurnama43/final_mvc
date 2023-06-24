@@ -40,7 +40,7 @@ class ProductController {
             if (result) {
                 req.toastr.success("A category success created", "Success!");
                 // req.flash("success", "A category success created");
-                res.redirect("/product/list", { title: "product" });
+                res.redirect("/product/list");
             }
         } catch (error) {
             if (error instanceof Prisma.PrismaClientKnownRequestError)
@@ -51,7 +51,7 @@ class ProductController {
                     );
                 }
 
-            res.redirect("/product/create", { title: "product" });
+            res.redirect("/product/create");
             console.log(error);
         }
     }
